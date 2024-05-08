@@ -48,6 +48,7 @@ describe("GET /US-Info", () => {
 		const mockResponse: Response = await supertest(appServer).get(
 			"/US-Info"
 		);
+		expect(mockResponse.text[0] === '[' && mockResponse.text[mockResponse.text.length-1] === ']').toBe(true);
 		expect(Array.isArray(JSON.parse(mockResponse.text))).toBe(true);
 		expect(mockResponse.status).toBe(200);
 	});

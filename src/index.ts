@@ -12,7 +12,7 @@ app.get("/", (_request: Request, response: Response) => {
 });
 
 app.get("/name", (_request: Request, response: Response) => {
-	const name = "Christina";
+	const name: string = "Christina";
 	response.send(`responds with a string containing some name ${name}`);
 });
 
